@@ -125,9 +125,9 @@ const LoginPage = (props) => {
           <img
             className="login__welcome-back__logo-container--image"
             src={logo}
-            alt=" Drop Note"
+            alt=" School Timetabling"
           />
-          Drop Note
+          School Timetabling
         </div>
         <div className="login__welcome-back__main-container">
           <div className="login__welcome-back__main-container__text-container">
@@ -248,9 +248,9 @@ const LoginPage = (props) => {
           <img
             className="login__login-container__logo-container--image"
             src={logo}
-            alt=" Drop Note"
+            alt=" School Timetabling"
           />
-          Drop Note
+          School Timetabling
         </div>
         <div className="login__login-container__main-container">
           <div className="login__login-container__main-container__social-container">
