@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Route } from 'react-router-dom';
+import Navbar from './component/navbar'; 
+import Footer from './component/footer';
+import { Routes } from 'react-router-dom';
+import LandingPage from './page/landing'
+import LoginPage from './page/login';
+import ProtectedRoute from './component/ProtectedRoute';
+import { useLocation } from 'react-router-dom';
+
 
 function App() {
+  let location = useLocation();
+
+  const isLoginPage = location.pathname === '/login';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        {!isLoginPage && <Navbar />}
+        <Routes> 
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<ProtectedRoute element={LandingPage} />} /> 
+        </Routes>
+        {!isLoginPage && <Footer />}
+    </>
   );
 }
 
